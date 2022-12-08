@@ -1,6 +1,7 @@
+import FighterCard from './FighterCard'
 import Nav from './Nav'
 
-const Central = () => {
+const Transfers = () => {
   const homeBorder = {
     borderWidth: '4px',
     backgroundColor: 'red',
@@ -9,10 +10,11 @@ const Central = () => {
   }
 
   return (
-    <div style={homeBorder}>
+    <div className="home" style={homeBorder}>
       <Nav />
-      <p>This is Central</p>
+      <p>Transfers</p>
+      <FighterCard />
     </div>
   )
 }
-export default Central
+export default Transfers

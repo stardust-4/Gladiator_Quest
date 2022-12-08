@@ -11,6 +11,7 @@ const LoginForm = () => {
     <div className="register" style={registerBorder}>
       <p>This is the log in from</p>
       <button onClick={() => navigate(`/register`)}>Register</button>
+      <button onClick={() => navigate(`/central`)}>Log in</button>
     </div>
   )
 }
