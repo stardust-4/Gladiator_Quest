@@ -4,6 +4,8 @@ import Home from './components/Home'
 import RegisterForm from './components/RegisterForm'
 import PickSchool from './components/PickSchool'
 import Central from './components/Central'
+import Squad from './components/Squad'
+import Transfers from './components/Transfers'
 
 function App() {
   const appBorder = {
@@ -23,6 +25,8 @@ function App() {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/pickschool" element={<PickSchool />} />
         <Route path="/central" element={<Central />} />
+        <Route path="/squad" element={<Squad />} />
+        <Route path="/transfers" element={<Transfers />} />
       </Routes>
     </div>
   )

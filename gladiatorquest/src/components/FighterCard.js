@@ -1,6 +1,4 @@
-import Nav from './Nav'
-
-const Central = () => {
+const FighterCard = () => {
   const homeBorder = {
     borderWidth: '4px',
     backgroundColor: 'red',
@@ -10,9 +8,8 @@ const Central = () => {
 
   return (
     <div style={homeBorder}>
-      <Nav />
-      <p>This is Central</p>
+      <p>Fighter Card</p>
     </div>
   )
 }
-export default Central
+export default FighterCard
