@@ -7,6 +7,7 @@ import Central from './components/Central'
 import Squad from './components/Squad'
 import Transfers from './components/Transfers'
 import FighterSelect from './components/FighterSelect'
+import Arena from './components/Arena'
 
 function App() {
   const appBorder = {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/squad" element={<Squad />} />
         <Route path="/transfers" element={<Transfers />} />
         <Route path="/fighterselect" element={<FighterSelect />} />
+        <Route path="/arena" element={<Arena />} />
       </Routes>
     </div>
   )
