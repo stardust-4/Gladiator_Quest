@@ -1,4 +1,5 @@
 import Squad from './Squad'
+import { Link } from 'react-router-dom'
 const FighterSelect = () => {
   const homeBorder = {
     borderWidth: '4px',
@@ -11,6 +12,9 @@ const FighterSelect = () => {
     <div style={homeBorder}>
       <p>Fighter select</p>
       <Squad />
+      <Link style={homeBorder} to={'/arena'}>
+        ready
+      </Link>
     </div>
   )
 }

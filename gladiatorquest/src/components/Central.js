@@ -17,7 +17,7 @@ const Central = () => {
       <FighterDev />
       <UserCard />
       <Link style={homeBorder} to={'/fighterselect'}>
-        advance{' '}
+        advance
       </Link>
     </div>
   )
