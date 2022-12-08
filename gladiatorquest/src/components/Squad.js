@@ -1,5 +1,5 @@
 import Nav from './Nav'
-import FighterCard from './FighterCard'
+import FighterCard from './ArenaFighterCard'
 const Squad = () => {
   const homeBorder = {
     borderWidth: '4px',

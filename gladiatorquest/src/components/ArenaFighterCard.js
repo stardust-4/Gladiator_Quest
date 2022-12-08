@@ -3,12 +3,17 @@ const FighterCard = () => {
     borderWidth: '4px',
     backgroundColor: 'red',
     borderColor: 'black',
-    borderStyle: 'solid'
+    borderStyle: 'solid',
+    width: '225px',
+    height: '275px'
   }
 
   return (
     <div style={homeBorder}>
-      <p>Fighter Card</p>
+      <p>Fighter name</p>
+      <p>Fighter image</p>
+      <p>Fighter type</p>
+      <p>Fighter health bar</p>
     </div>
   )
 }

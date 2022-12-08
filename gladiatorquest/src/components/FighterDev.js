@@ -1,4 +1,4 @@
-import FighterCard from './FighterCard'
+import FighterCard from './ArenaFighterCard'
 
 const FighterDev = () => {
   const homeBorder = {
