@@ -2,6 +2,8 @@ import FighterCard from './ArenaFighterCard'
 import Nav from './Nav'
 
 const Transfers = () => {
+  const getTransferFighters = () => {}
+
   const homeBorder = {
     borderWidth: '4px',
     backgroundColor: 'red',

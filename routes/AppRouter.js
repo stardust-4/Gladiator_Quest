@@ -7,4 +7,5 @@ const UserRouter = require('./UserRouter')
 Router.use('/fighter', FighterRouter)
 Router.use('/school', SchoolRouter)
 Router.use('/user', UserRouter)
+
 module.exports = Router
