@@ -9,11 +9,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Fighter.belongsTo(models.School, { foreignKey: 'schoolid' })
     }
   }
   Fighter.init(
     {
-      schoolid: DataTypes.INTEGER,
+      schoolid: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'schools',
+          key: 'id'
+        }
+      },
       name: DataTypes.STRING,
       image: DataTypes.STRING,
       buycost: DataTypes.INTEGER,

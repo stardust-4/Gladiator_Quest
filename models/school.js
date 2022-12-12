@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       School.belongsTo(models.User, { foreignKey: 'userid' })
+      School.hasMany(models.Fighter, { foreignKey: 'schoolid' })
     }
   }
   School.init(
