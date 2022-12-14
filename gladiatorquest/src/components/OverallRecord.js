@@ -3,7 +3,9 @@ const OverallRecord = () => {
     borderWidth: '4px',
     backgroundColor: 'pink',
     borderColor: 'black',
-    borderStyle: 'solid'
+    borderStyle: 'solid',
+    width: '300px',
+    height: '300px'
   }
 
   return (

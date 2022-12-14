@@ -5,6 +5,17 @@ import axios from 'axios'
 import { BASE_URL } from '../globals'
 
 const PickSchool = () => {
+  const initialState = { schoolChoice: '' }
+  const [formValues, setFormValues] = useState(initialState)
+
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = () => {
+    navigate('/central')
+  }
+
   let navigate = useNavigate()
 
   const [schoolsList, setSchoolsList] = useState([])
@@ -36,7 +47,17 @@ const PickSchool = () => {
           <SchoolCard school={school} key={school.id} />
         </div>
       ))}
-      <button onClick={() => navigate(`/central`)}>submit</button>
+
+      <form className="form" onSubmit={handleSubmit}>
+        <input
+          placeholder="Enter Your School Choice Here"
+          onChange={handleChange}
+          value={formValues.email}
+          name="email"
+          className="input"
+        />
+        <button onClick={() => navigate(`/central`)}>submit</button>
+      </form>
     </div>
   )
 }

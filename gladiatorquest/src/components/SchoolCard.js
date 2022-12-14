@@ -13,7 +13,7 @@ const SchoolCard = (props) => {
     <div style={homeBorder}>
       <div>{props.school.name}</div>
       <img style={schoolimagewrapper} src={props.school.image}></img>
-      <div>{props.school.wealth}</div>
+      <div>Wealth: ${props.school.wealth}</div>
       <div>{props.school.description}</div>
     </div>
   )

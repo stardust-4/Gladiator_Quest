@@ -5,7 +5,8 @@ const UserCard = () => {
     borderWidth: '4px',
     backgroundColor: 'green',
     borderColor: 'black',
-    borderStyle: 'solid'
+    borderStyle: 'solid',
+    width: '250px'
   }
 
   return (
@@ -16,3 +17,4 @@ const UserCard = () => {
   )
 }
 export default UserCard
+////is there a need for this?

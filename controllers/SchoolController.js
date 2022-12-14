@@ -31,23 +31,12 @@ const AvailableSchoolChoices = async (req, res) => {
     throw error
   }
 }
-const UpdateSchool = async (req, res) => {
-  try {
-    const school = await School.update(
-      { ...req.body },
-      { where: { id: req.params.user_Id }, returning: true }
-    )
-    res.send(school)
-  } catch (error) {
-    throw error
-  }
-}
 const DeleteSchool = async (req, res) => {
   try {
-    let userId = parseInt(req.params.schoolid)
-    await User.destroy({ where: { id: userId } })
+    let schoolid = parseInt(req.params.schoolid)
+    await School.destroy({ where: { id: schoolid } })
     res.send({
-      msg: `User ${userId} Deleted`
+      msg: `School ${schoolid} Deleted`
     })
   } catch (error) {
     throw error
@@ -57,6 +46,5 @@ module.exports = {
   GetSchools,
   CreateSchool,
   AvailableSchoolChoices,
-  UpdateSchool,
   DeleteSchool
 }
