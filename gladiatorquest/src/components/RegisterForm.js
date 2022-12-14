@@ -4,8 +4,6 @@ import axios from 'axios'
 import { BASE_URL } from '../globals'
 
 const RegisterForm = () => {
-  let navigate = useNavigate()
-
   let initialState = {
     name: '',
     email: '',
@@ -13,15 +11,18 @@ const RegisterForm = () => {
     confirmPassword: ''
   }
   const [newUser, setNewUser] = useState(initialState)
-
-  const handleChange = (e) => {
-    setNewUser({ ...newUser, [e.target.id]: e.target.value })
+  let navigate = useNavigate()
+  const handleChange = (event) => {
+    setNewUser({ ...newUser, [event.target.name]: event.target.value })
   }
 
   const createUser = async (e) => {
     e.preventDefault()
-    await axios.post(`${BASE_URL}user/create`, newUser)
-    console.log('create user')
+    let userYouJustCreated = await axios.post(`${BASE_URL}user/create`, newUser)
+    console.log(userYouJustCreated.data)
+    console.log(userYouJustCreated.data.id)
+    localStorage.setItem('user', JSON.stringify(userYouJustCreated.data))
+    navigate('/pickschool')
   }
 
   const registerBorder = {

@@ -1,9 +1,11 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import axios from 'axios'
+import { BASE_URL } from '../globals'
 import '../CSS/LoginForm.css'
 
 const LoginForm = () => {
-  const initialState = { email: '', password: '' }
+  const initialState = { name: '', id: '' }
   const [formValues, setFormValues] = useState(initialState)
 
   let navigate = useNavigate()
@@ -12,7 +14,13 @@ const LoginForm = () => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    let userYouSignedInAs = await axios.get(
+      `${BASE_URL}user/get/${formValues.id}`
+    )
+    localStorage.setItem('user', JSON.stringify(userYouSignedInAs.data))
     navigate('/central')
   }
 
@@ -26,21 +34,21 @@ const LoginForm = () => {
       <p>This is the log in from</p>
       <form className="form" onSubmit={handleSubmit}>
         <input
-          placeholder="Email"
+          placeholder="Name"
           onChange={handleChange}
-          value={formValues.email}
-          name="email"
+          value={formValues.name}
+          name="name"
           className="input"
         />
         <input
-          placeholder="Password"
+          placeholder="Id Number"
           onChange={handleChange}
-          value={formValues.password}
-          name="password"
+          value={formValues.id}
+          name="id"
           className="input"
         />
         <button
-          disabled={!formValues.email || !formValues.password}
+          disabled={!formValues.name || !formValues.id}
           className="button"
         >
           Login
