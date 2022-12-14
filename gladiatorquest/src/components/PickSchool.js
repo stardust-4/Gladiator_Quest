@@ -13,6 +13,7 @@ const PickSchool = () => {
   }
 
   const handleSubmit = () => {
+    console.log('submitted')
     navigate('/central')
   }
 
@@ -24,12 +25,10 @@ const PickSchool = () => {
   const getSchools = async () => {
     const res = await axios.get(`${BASE_URL}school/pick/`)
     setSchoolsList(res.data)
-    console.log(res.data)
   }
   useEffect(() => {
     getSchools()
   }, [])
-  console.log(schoolsList)
 
   const registerBorder = {
     borderWidth: '4px',
@@ -57,7 +56,7 @@ const PickSchool = () => {
           name="email"
           className="input"
         />
-        <button onClick={() => navigate(`/central`)}>submit</button>
+        <button>submit</button>
       </form>
     </div>
   )

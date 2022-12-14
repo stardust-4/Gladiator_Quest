@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import axios from 'axios'
+import { BASE_URL } from '../globals'
 
 const RegisterForm = () => {
   let navigate = useNavigate()
@@ -16,8 +18,10 @@ const RegisterForm = () => {
     setNewUser({ ...newUser, [e.target.name]: e.target.value })
   }
 
-  const createUser = () => {
-    console.log('new user should be created')
+  const createUser = async (e) => {
+    e.preventDefault()
+    await axios.post(`${BASE_URL}user/create`)
+    console.log('create user')
   }
 
   const registerBorder = {
@@ -61,7 +65,7 @@ const RegisterForm = () => {
           className="input"
         />
         <button
-          onClick={() => navigate(`/pickschool`)}
+          onClick={createUser}
           disabled={
             (!newUser.email,
             !newUser.name,
