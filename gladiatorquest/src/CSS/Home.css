@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+* {
+text-align: center;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  /* background-image: url("https://preview.redd.it/hxqilf0wkgm31.jpg?auto=webp&s=c6089f8d0793f9959556d8191a970b5a2d40de14"); */
+  background-size: cover;
+  height: 100vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: center;
+  margin: auto;
+}
+
+.input {
+  border-radius: 20px;
+  background-color: #2a2c37;
+  border: none;
+  margin: 5px;
+  height: 30px;
+  width: 250px;
+  color: white;
+}
+
+.button {
+  height: 35px;
+  width: 100px;
+  border-radius: 50px;
+  background-image: linear-gradient(to right, brown , black);
+  color: white;
+  font-size: large;
+  font-weight: bolder;
+  cursor: pointer;
+  border: none;
+  font-family: 'Chakra Petch', sans-serif;
+}
+.loginformcontainer {
+  margin-top: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

@@ -1,0 +1,18 @@
+
+
+.registerbtn {
+  height: 35px;
+  width: 100px;
+  border-radius: 50px;
+  background-image: linear-gradient(to right, brown , black);
+  color: white;
+  font-size: large;
+  font-weight: bolder;
+  cursor: pointer;
+  border: none;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.register {
+  background-color: #cfc28e;
+}
