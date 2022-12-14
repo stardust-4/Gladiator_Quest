@@ -1,4 +1,5 @@
 const { School } = require('../models')
+const { Op } = require('sequelize')
 
 const GetSchools = async (req, res) => {
   try {
@@ -21,9 +22,11 @@ const AvailableSchoolChoices = async (req, res) => {
     const schools = await School.findAll({
       where: {
         id: {
-          [Op.gt]: 2
+          [Op.gt]: [2]
         }
-      }
+      },
+      raw: true,
+      nest: true
     })
 
     res.send(schools)
@@ -42,9 +45,21 @@ const DeleteSchool = async (req, res) => {
     throw error
   }
 }
+const UpdateSchool = async (req, res) => {
+  try {
+    const schools = await School.update(
+      { ...req.body },
+      { where: { id: req.params.schoolid }, returning: true }
+    )
+    res.send(schools)
+  } catch (error) {
+    throw error
+  }
+}
 module.exports = {
   GetSchools,
   CreateSchool,
   AvailableSchoolChoices,
-  DeleteSchool
+  DeleteSchool,
+  UpdateSchool
 }

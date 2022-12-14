@@ -20,8 +20,9 @@ const PickSchool = () => {
 
   const [schoolsList, setSchoolsList] = useState([])
 
+  //gets school with id greater than 2 ie school available for selection ie excluding the //transfer and opponent schools
   const getSchools = async () => {
-    const res = await axios.get(`${BASE_URL}school/`)
+    const res = await axios.get(`${BASE_URL}school/pick/`)
     setSchoolsList(res.data)
     console.log(res.data)
   }

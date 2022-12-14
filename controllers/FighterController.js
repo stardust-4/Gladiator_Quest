@@ -65,10 +65,23 @@ const CreateFighter = async (req, res) => {
   }
 }
 
+const UpdateFighter = async (req, res) => {
+  try {
+    const fighters = await Fighter.update(
+      { ...req.body },
+      { where: { id: req.params.fighterid }, returning: true }
+    )
+    res.send(fighters)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   GetFighters,
   CreateFighter,
   GetTransferFighters,
   GetOpponentFighters,
-  GetUserFighters
+  GetUserFighters,
+  UpdateFighter
 }
