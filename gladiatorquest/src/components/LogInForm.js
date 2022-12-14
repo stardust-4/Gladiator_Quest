@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import '../CSS/LoginForm.css'
 
 const LoginForm = () => {
   const initialState = { email: '', password: '' }
@@ -46,7 +47,9 @@ const LoginForm = () => {
         </button>
       </form>
       <p>If you do not have an account then register by clicking below</p>
-      <button onClick={() => navigate(`/register`)}>Register</button>
+      <button className="registerbtn" onClick={() => navigate(`/register`)}>
+        Register
+      </button>
     </div>
   )
 }

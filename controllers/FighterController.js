@@ -39,6 +39,23 @@ const GetOpponentFighters = async (req, res) => {
     res.status(500).send({ status: 'Error', msg: 'get error' })
   }
 }
+
+//gets fighters by parameter school id
+const GetUserFighters = async (req, res) => {
+  try {
+    const UserFighters = await Fighter.findAll({
+      where: {
+        schoolid: `${req.params.userSchoolid}`
+      },
+      raw: true,
+      nest: true
+    })
+
+    res.send({ UserFighters })
+  } catch (error) {
+    res.status(500).send({ status: 'Error', msg: 'get error' })
+  }
+}
 const CreateFighter = async (req, res) => {
   try {
     const fighter = await Fighter.create({ ...req.body })
@@ -52,5 +69,6 @@ module.exports = {
   GetFighters,
   CreateFighter,
   GetTransferFighters,
-  GetOpponentFighters
+  GetOpponentFighters,
+  GetUserFighters
 }
