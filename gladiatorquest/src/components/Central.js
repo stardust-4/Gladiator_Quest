@@ -2,12 +2,22 @@ import Nav from './Nav'
 import { Link } from 'react-router-dom'
 import FighterDev from './FighterDev'
 import UserCard from './UserCard'
+import OverallRecord from './OverallRecord'
+
 const Central = () => {
   const homeBorder = {
     borderWidth: '4px',
-    backgroundColor: 'red',
+    backgroundColor: '#f6aa1c',
     borderColor: 'black',
     borderStyle: 'solid'
+  }
+  const advancebtn = {
+    borderWidth: '4px',
+    backgroundColor: 'white',
+    borderColor: 'black',
+    borderStyle: 'solid',
+    width: '75px',
+    height: '75px'
   }
 
   return (
@@ -15,10 +25,10 @@ const Central = () => {
       <Nav />
       <p>This is Central</p>
       <FighterDev />
-      <UserCard />
-      <Link style={homeBorder} to={'/fighterselect'}>
-        advance to arena
-      </Link>
+      <OverallRecord />
+      <div style={advancebtn}>
+        <Link to={'/fighterselect'}>advance to arena</Link>
+      </div>
     </div>
   )
 }

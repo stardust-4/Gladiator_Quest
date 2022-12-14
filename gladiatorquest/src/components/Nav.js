@@ -1,13 +1,28 @@
 import { Link } from 'react-router-dom'
+import '../CSS/Nav.css'
 
 const Nav = () => {
+  const navstyle = {
+    backgroundColor: 'green'
+  }
+
   return (
-    <>
-      <Link to={'/central'}>Central </Link>
-      <Link to={'/squad'}>Squad </Link>
-      <Link to={'/transfers'}>Transfers </Link>
-      <Link to={'/'}>logout </Link>
-    </>
+    <div className="nav">
+      <ul>
+        <li>
+          <Link to={'/central'}>Central </Link>
+        </li>
+        <li>
+          <Link to={'/squad'}>Squad </Link>
+        </li>
+        <li>
+          <Link to={'/transfers'}>Transfers </Link>
+        </li>
+        <li>
+          <Link to={'/'}>logout </Link>
+        </li>
+      </ul>
+    </div>
   )
 }
 
