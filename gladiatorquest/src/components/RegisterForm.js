@@ -15,12 +15,12 @@ const RegisterForm = () => {
   const [newUser, setNewUser] = useState(initialState)
 
   const handleChange = (e) => {
-    setNewUser({ ...newUser, [e.target.name]: e.target.value })
+    setNewUser({ ...newUser, [e.target.id]: e.target.value })
   }
 
   const createUser = async (e) => {
     e.preventDefault()
-    await axios.post(`${BASE_URL}user/create`)
+    await axios.post(`${BASE_URL}user/create`, newUser)
     console.log('create user')
   }
 
