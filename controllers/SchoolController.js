@@ -56,10 +56,25 @@ const UpdateSchool = async (req, res) => {
     throw error
   }
 }
+const GetUserSchool = async (req, res) => {
+  try {
+    let userid = parseInt(req.params.userid)
+    const schools = await School.findAll({
+      where: { userid: userid },
+      raw: true,
+      nest: true
+    })
+    res.send(schools)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   GetSchools,
   CreateSchool,
   AvailableSchoolChoices,
   DeleteSchool,
-  UpdateSchool
+  UpdateSchool,
+  GetUserSchool
 }

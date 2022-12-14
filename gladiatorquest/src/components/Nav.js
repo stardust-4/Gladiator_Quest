@@ -19,7 +19,14 @@ const Nav = () => {
           <Link to={'/transfers'}>Transfers </Link>
         </li>
         <li>
-          <Link to={'/'}>logout </Link>
+          <Link
+            to={'/'}
+            onClick={() => {
+              localStorage.clear()
+            }}
+          >
+            logout{' '}
+          </Link>
         </li>
       </ul>
     </div>
