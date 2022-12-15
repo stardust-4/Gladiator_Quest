@@ -1,0 +1,11 @@
+#card {
+  background-color: bisque;
+}
+
+#card:hover {
+  background-color: aqua;
+}
+
+#card:focus {
+  background-color: blueviolet;
+}
