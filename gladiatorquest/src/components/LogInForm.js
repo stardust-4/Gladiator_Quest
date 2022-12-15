@@ -20,7 +20,7 @@ const LoginForm = () => {
     let userYouSignedInAs = await axios.get(
       `${BASE_URL}user/get/${formValues.id}`
     )
-    localStorage.setItem('user', JSON.stringify(userYouSignedInAs.data))
+    localStorage.setItem('userid', JSON.stringify(userYouSignedInAs.data.id))
     navigate('/central')
   }
 

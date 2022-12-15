@@ -1,5 +1,12 @@
 #card {
   background-color: bisque;
+  border-width: 4px;
+  border-style: solid;
+}
+
+.schoolimagewrapper {
+  height: 160px;
+  width: 160px;
 }
 
 #card:hover {

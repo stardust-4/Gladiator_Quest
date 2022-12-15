@@ -21,7 +21,7 @@ const RegisterForm = () => {
     let userYouJustCreated = await axios.post(`${BASE_URL}user/create`, newUser)
     console.log(userYouJustCreated.data)
     console.log(userYouJustCreated.data.id)
-    localStorage.setItem('user', JSON.stringify(userYouJustCreated.data))
+    localStorage.setItem('userid', JSON.stringify(userYouJustCreated.data.id))
     navigate('/pickschool')
   }
 

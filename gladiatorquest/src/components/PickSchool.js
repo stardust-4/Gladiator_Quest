@@ -3,13 +3,10 @@ import SchoolCard from './SchoolCard'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../globals'
-import '../CSS/SchoolCard.css'
 
 const PickSchool = () => {
-  const handleSubmit = () => {
-    console.log('submitted')
-    navigate('/central')
-  }
+  let currentuser = localStorage.getItem('userid')
+  console.log('current user id = ' + currentuser)
 
   let navigate = useNavigate()
 
@@ -23,7 +20,15 @@ const PickSchool = () => {
   const select = (e) => {
     setSelection(e.target.parentElement.className)
   }
-  console.log(selection)
+  console.log('selected school id = ' + selection)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    await axios.put(`${BASE_URL}school/${selection}`, {
+      userid: currentuser
+    })
+    navigate('/central')
+  }
 
   useEffect(() => {
     getSchools()
@@ -42,7 +47,7 @@ const PickSchool = () => {
       {schoolsList.map((school) => (
         //
 
-        <div onClick={select} tabIndex="0">
+        <div onClick={select}>
           <SchoolCard
             id={school.id}
             value={school.value}
