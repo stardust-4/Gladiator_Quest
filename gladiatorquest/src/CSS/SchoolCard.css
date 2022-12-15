@@ -4,8 +4,12 @@
 
 #card:hover {
   background-color: aqua;
-}
+} 
+
 
 #card:focus {
-  background-color: blueviolet;
+  background-color: lightcyan;
+  border-color: yellow;
 }
+
+
