@@ -3,15 +3,9 @@ import SchoolCard from './SchoolCard'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../globals'
+import '../CSS/SchoolCard.css'
 
 const PickSchool = () => {
-  const initialState = { schoolChoice: '' }
-  const [formValues, setFormValues] = useState(initialState)
-
-  // const handleChange = (e) => {
-  //   setFormValues({ ...formValues, [e.target.name]: e.target.value })
-  // }
-
   const handleSubmit = () => {
     console.log('submitted')
     navigate('/central')
@@ -41,15 +35,14 @@ const PickSchool = () => {
     borderColor: 'green',
     display: 'flex'
   }
-  const schoolCard = {
-    // backgroundColor: 'pink'
-  }
 
   return (
     <div style={registerBorder}>
       <p>Choose a school to take over as manager and start your campaign!</p>
       {schoolsList.map((school) => (
-        <div style={schoolCard} onClick={select}>
+        //
+
+        <div onClick={select} tabIndex="0">
           <SchoolCard
             id={school.id}
             value={school.value}
@@ -57,15 +50,9 @@ const PickSchool = () => {
             key={school.id}
           />
         </div>
+        //
       ))}
       <form className="form" onSubmit={handleSubmit}>
-        {/* <input
-          placeholder="Enter Your School Choice Here"
-          onChange={handleChange}
-          value={formValues.email}
-          name="email"
-          className="input"
-        /> */}
         <button>submit</button>
       </form>
     </div>

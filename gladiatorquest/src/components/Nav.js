@@ -2,10 +2,6 @@ import { Link } from 'react-router-dom'
 import '../CSS/Nav.css'
 
 const Nav = () => {
-  const navstyle = {
-    backgroundColor: 'green'
-  }
-
   return (
     <div className="nav">
       <ul>
