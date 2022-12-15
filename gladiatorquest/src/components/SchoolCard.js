@@ -1,19 +1,11 @@
 import '../CSS/SchoolCard.css'
 
 const SchoolCard = (props) => {
-  const homeBorder = {
-    borderWidth: '4px',
-    borderStyle: 'solid'
-  }
-  const schoolimagewrapper = {
-    height: '160px',
-    width: '160px'
-  }
   return (
-    <div style={homeBorder} className={props.school.id} id="card" tabIndex="0">
+    <div className={props.school.id} id="card" tabIndex="0">
       <div>{props.school.name}</div>
       <img
-        style={schoolimagewrapper}
+        className="schoolimagewrapper"
         src={props.school.image}
         alt="schoolimage"
       ></img>
