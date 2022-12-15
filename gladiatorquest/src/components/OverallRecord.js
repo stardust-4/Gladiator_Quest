@@ -1,4 +1,6 @@
-const OverallRecord = () => {
+const OverallRecord = ({ schoolinfo }) => {
+  let thisSchoolData = schoolinfo.data[0]
+  console.log(thisSchoolData)
   const stats = {
     fontSize: '50%'
   }

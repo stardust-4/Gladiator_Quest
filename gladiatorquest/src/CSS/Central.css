@@ -10,6 +10,12 @@ body {
   background: #1b2431;
 }
 
+.fightercardwrapper {
+  display: inline-block;
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
 .wrapper {
   width: 90vw;
   height: 90vh;

@@ -2,39 +2,34 @@ import MiniMe from './MiniMe'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../globals'
+import '../CSS/Central.css'
 
-const FighterDev = () => {
+const FighterDev = ({ schoolinfo }) => {
+  let thisSchoolId = schoolinfo.data[0].id
+
+  console.log(thisSchoolId)
   const [fighterList, setFighterList] = useState([])
 
   const getFighters = async () => {
-    const res = await axios.get(`${BASE_URL}fighter/`)
+    const res = await axios.get(`${BASE_URL}fighter/user/${thisSchoolId}`)
     setFighterList(res.data)
-    // console.log(res.data)
+    console.log(res.data)
   }
   useEffect(() => {
     getFighters()
   }, [])
-  // console.log(fighterList)
+  console.log(fighterList)
 
-  const homeBorder = {
-    // borderWidth: '4px',
-    // backgroundColor: 'grey',
-    // borderColor: 'gold',
-    // borderStyle: 'solid',
-    // width: '500px',
-    // height: '300px'
-  }
   const fightercardwrapper = {
-    position: 'absolute',
     height: '50px',
     width: '50px'
   }
 
   return (
-    <div className="home" style={homeBorder}>
+    <div>
       <p>Fighter Dev</p>
       {fighterList.map((fighter) => (
-        <div style={fightercardwrapper}>
+        <div style={fightercardwrapper} className="fightercardwrapper">
           <MiniMe fighter={fighter} key={fighter.id} />
         </div>
       ))}

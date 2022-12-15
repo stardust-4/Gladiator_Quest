@@ -4,18 +4,21 @@ const MiniMe = (props) => {
     backgroundColor: '#941b0c',
     borderColor: 'black',
     borderStyle: 'solid',
-    width: '95px',
-    height: '105px',
-    color: 'black'
+    width: '105px',
+    height: '125px',
+    color: 'black',
+    margin: '10px'
   }
 
   const img = {
-    width: '40%',
-    height: '40%'
+    width: '50%',
+    height: '50%',
+    marginTop: '10px'
   }
   const h4 = {
     paddingTop: '2px',
-    margin: '0px'
+    margin: '0px',
+    fontSize: '30%'
   }
 
   return (
@@ -23,7 +26,7 @@ const MiniMe = (props) => {
       <img style={img} src={props.fighter.image} alt="mini fighter head"></img>
       <h4 style={h4}>{props.fighter.name}</h4>
       <p style={h4}>
-        {props.fighter.type} {props.fighter.rating}
+        {props.fighter.type} lvl {props.fighter.rating}
       </p>
     </div>
   )

@@ -1,7 +1,8 @@
 import '../CSS/YourSchool.css'
 
 const YourSchool = ({ schoolinfo }) => {
-  let thisSchool = schoolinfo[0]
+  let thisSchool = schoolinfo.data[0]
+  console.log(schoolinfo.data[0])
   return (
     <div className="yourschoolcard">
       <div>{thisSchool.name}</div>
