@@ -8,12 +8,12 @@ import Squad from './components/Squad'
 import Transfers from './components/Transfers'
 import FighterSelect from './components/FighterSelect'
 import Arena from './components/Arena'
-import { BASE_URL } from './globals'
-import axios from 'axios'
-import { useState, useEffect } from 'react'
+// import { BASE_URL } from './globals'
+// import axios from 'axios'
+// import { useState } from 'react'
 
 function App() {
-  const [schools, setSchools] = useState([])
+  // const [schools, setSchools] = useState([])
 
   const appBorder = {
     borderWidth: '4px',
@@ -22,23 +22,17 @@ function App() {
     borderStyle: 'solid'
   }
 
-  const getSchools = async () => {
-    const res = await axios.get(`${BASE_URL}/api/school`)
-    setSchools(res.data)
-  }
+  // const getSchools = async () => {
+  //   const res = await axios.get(`${BASE_URL}/api/school`)
+  //   setSchools(res.data)
+  // }
 
   return (
     <div className="App" style={appBorder}>
-      <header>
-        <p>App.js component</p>
-      </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<RegisterForm />} />
-        <Route
-          path="/pickschool"
-          element={<PickSchool getSchools={getSchools} />}
-        />
+        <Route path="/pickschool" element={<PickSchool />} />
         <Route path="/central" element={<Central />} />
         <Route path="/squad" element={<Squad />} />
         <Route path="/transfers" element={<Transfers />} />

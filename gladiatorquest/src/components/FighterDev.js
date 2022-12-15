@@ -9,20 +9,20 @@ const FighterDev = () => {
   const getFighters = async () => {
     const res = await axios.get(`${BASE_URL}fighter/`)
     setFighterList(res.data)
-    console.log(res.data)
+    // console.log(res.data)
   }
   useEffect(() => {
     getFighters()
   }, [])
-  console.log(fighterList)
+  // console.log(fighterList)
 
   const homeBorder = {
-    borderWidth: '4px',
-    backgroundColor: 'grey',
-    borderColor: 'gold',
-    borderStyle: 'solid',
-    width: '500px',
-    height: '300px'
+    // borderWidth: '4px',
+    // backgroundColor: 'grey',
+    // borderColor: 'gold',
+    // borderStyle: 'solid',
+    // width: '500px',
+    // height: '300px'
   }
   const fightercardwrapper = {
     position: 'absolute',
