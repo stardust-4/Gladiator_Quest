@@ -1,7 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import axios from 'axios'
-import { BASE_URL } from '../globals'
 import '../CSS/LoginForm.css'
 
 const LoginForm = () => {
@@ -16,11 +14,11 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
-    let userYouSignedInAs = await axios.get(
-      `${BASE_URL}user/get/${formValues.id}`
-    )
-    localStorage.setItem('userid', JSON.stringify(userYouSignedInAs.data.id))
+    // let userYouSignedInAs = await axios.get(
+    //   `${BASE_URL}user/get/${formValues.id}`
+    // )
+    // console.log(formValues.id)
+    localStorage.setItem('userid', formValues.id)
     navigate('/central')
   }
 

@@ -24,26 +24,24 @@ const Central = () => {
 
   useEffect(() => {
     getUserSchool()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [])
 
   console.log(schoolinfo)
   return (
     <>
       <Nav />
-      <main class="wrapper">
-        <div class="element1 grid-box">
+      <main className="wrapper">
+        <div className="element1 grid-box">
           <Link to={'/fighterselect'}>advance to arena</Link>
         </div>
-        <div class="element2 grid-box"> rock paper scisors cheetsheet</div>
-        <div class="element3 grid-box">
-          {/* <YourSchool schoolinfo={schoolinfo} /> */}
+        <div className="element2 grid-box"> rock paper scisors cheetsheet</div>
+        <div className="element3 grid-box">
+          <YourSchool schoolinfo={schoolinfo} />
         </div>
-        <div class="element4 grid-box">
-          <FighterDev />
-        </div>
-        <div class="element5 grid-box">user info</div>
-        <div class="element6 grid-box">
+        <div className="element4 grid-box">{/* <FighterDev /> */}</div>
+        <div className="element5 grid-box">user info</div>
+        <div className="element6 grid-box">
           school stats
           <OverallRecord schoolinfo={schoolinfo} />
         </div>
