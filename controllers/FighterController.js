@@ -19,7 +19,7 @@ const GetTransferFighters = async (req, res) => {
       nest: true
     })
 
-    res.send({ transferFighters })
+    res.send(transferFighters)
   } catch (error) {
     res.status(500).send({ status: 'Error', msg: 'get error' })
   }
@@ -34,7 +34,7 @@ const GetOpponentFighters = async (req, res) => {
       nest: true
     })
 
-    res.send({ OpponentFighters })
+    res.send(OpponentFighters)
   } catch (error) {
     res.status(500).send({ status: 'Error', msg: 'get error' })
   }
@@ -51,7 +51,7 @@ const GetUserFighters = async (req, res) => {
       nest: true
     })
 
-    res.send({ UserFighters })
+    res.send(UserFighters)
   } catch (error) {
     res.status(500).send({ status: 'Error', msg: 'get error' })
   }

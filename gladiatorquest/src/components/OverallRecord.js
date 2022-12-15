@@ -1,15 +1,9 @@
 const OverallRecord = () => {
-  const homeBorder = {
-    borderWidth: '4px',
-    backgroundColor: 'pink',
-    borderColor: 'black',
-    borderStyle: 'solid',
-    width: '300px',
-    height: '300px'
+  const stats = {
+    fontSize: '50%'
   }
-
   return (
-    <div className="home" style={homeBorder}>
+    <div style={stats}>
       <p>stats/OverallRecord</p>
     </div>
   )
