@@ -7,14 +7,19 @@ const FighterSelect = () => {
     borderColor: 'black',
     borderStyle: 'solid'
   }
+  // const squad = {
+  //   maxWidth: '50%'
+  //   float: 'right'
+  // }
 
   return (
     <div style={homeBorder}>
       <p>Fighter select</p>
-      <Squad />
-      <Link style={homeBorder} to={'/arena'}>
-        ready
-      </Link>
+      <div>
+        <Link style={homeBorder} to={'/arena'}>
+          ready
+        </Link>
+      </div>
     </div>
   )
 }

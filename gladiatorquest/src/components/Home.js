@@ -12,10 +12,11 @@ const Home = () => {
 
   return (
     <div className="home" style={homeBorder}>
-      <p>This is Home</p>
+      {/* <p>This is Home</p> */}
       <div className="loginformcontainer">
         <LoginForm />
       </div>
+      <p className="poopie">Gladiator Quest</p>
     </div>
   )
 }
