@@ -26,28 +26,27 @@ const Central = () => {
     // eslint-disable-next-line
   }, [])
 
-  console.log(schoolinfo)
+  // console.log(currentuser)
   return (
     <>
       <Nav />
       <main className="wrapper">
         <div className="element1 grid-box">
-          <Link to={'/fighterselect'}>advance to arena</Link>
+          <Link to={'/arena'}>Advance to Arena!</Link>
         </div>
         <div className="element2 grid-box">
           {' '}
           <Cheat />
         </div>
         <div className="element3 grid-box">
-          <YourSchool schoolinfo={schoolinfo} />
+          {/* <YourSchool schoolinfo={schoolinfo} /> */}
         </div>
         <div className="element4 grid-box">
-          <FighterDev schoolinfo={schoolinfo} />
+          {/* <FighterDev schoolinfo={schoolinfo} /> */}
         </div>
-        <div className="element5 grid-box">user info</div>
         <div className="element6 grid-box">
-          school stats
-          <OverallRecord schoolinfo={schoolinfo} />
+          School Stats
+          {/* <OverallRecord schoolinfo={schoolinfo} /> */}
         </div>
       </main>
     </>

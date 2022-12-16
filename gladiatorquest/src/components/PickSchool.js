@@ -38,12 +38,17 @@ const PickSchool = () => {
     borderWidth: '4px',
     borderStyle: 'solid',
     borderColor: 'green',
-    display: 'flex'
+    display: 'flex',
+    height: '500px'
   }
-
+  const blurb = {
+    fontSize: '20px'
+  }
   return (
     <div style={registerBorder}>
-      <p>Choose a school to take over as manager and start your campaign!</p>
+      <p style={blurb}>
+        Choose a school to take over as manager and start your campaign!
+      </p>
       {schoolsList.map((school) => (
         //
 

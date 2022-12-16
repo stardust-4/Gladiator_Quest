@@ -1,6 +1,8 @@
 import backgrounds from '../assets/backgrounds'
 import ArenaFighterCard from './ArenaFighterCard'
 import ArenaSquad from './ArenaSquad'
+import OpponentCard from './OpponentCard'
+import '../CSS/Central.css'
 const Arena = () => {
   console.log(backgrounds[0].url)
   const homeBorder = {
@@ -13,7 +15,7 @@ const Arena = () => {
   }
 
   const yourFighter = {
-    display: 'flex',
+    display: 'inline-block',
     width: '235px',
     height: '305px',
     float: 'left',
@@ -21,7 +23,7 @@ const Arena = () => {
     marginLeft: '260px'
   }
   const opponent = {
-    display: 'flex',
+    display: 'inline-block',
     width: '235px',
     marginRight: '260px',
     float: 'right',
@@ -32,17 +34,33 @@ const Arena = () => {
     float: 'left',
     marginTop: '20px'
   }
+  const fight = {
+    backgroundColor: 'pink',
+    width: '85px',
+    height: '85px',
+    margin: 'auto',
+    borderRadius: '45%',
+    padding: '20px',
+    fontSize: '20px'
+  }
+
   return (
     <div className="home" style={homeBorder}>
       <p>Arena, fight!</p>
       <div style={yourFighter}>
         <ArenaFighterCard />
       </div>
-      <div style={opponent}>
-        <ArenaFighterCard />
+      <div className="opfightercardwrapper" style={opponent}>
+        {<OpponentCard />}
       </div>
-      <div style={squad}>
-        <ArenaSquad />
+      <div style={squad}>{/* <ArenaSquad /> */}</div>
+      <div
+        style={fight}
+        onClick={() => {
+          console.log(OpponentCard)
+        }}
+      >
+        Click!
       </div>
     </div>
   )

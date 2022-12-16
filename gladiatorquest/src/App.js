@@ -11,10 +11,21 @@ import Arena from './components/Arena'
 // import { BASE_URL } from './globals'
 // import axios from 'axios'
 // import { useState } from 'react'
-
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { BASE_URL } from './globals'
 function App() {
   // const [schools, setSchools] = useState([])
+  const [fighterList, setFighterList] = useState([])
 
+  const getFighters = async () => {
+    const res = await axios.get(`${BASE_URL}fighter/`)
+    setFighterList(res.data)
+    console.log(fighterList)
+  }
+  useEffect(() => {
+    getFighters()
+  }, [])
   const appBorder = {
     borderWidth: '4px',
     backgroundColor: 'white',
@@ -34,7 +45,7 @@ function App() {
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/pickschool" element={<PickSchool />} />
         <Route path="/central" element={<Central />} />
-        <Route path="/squad" element={<Squad />} />
+        <Route path="/squad" element={<Squad fighterList={fighterList} />} />
         <Route path="/transfers" element={<Transfers />} />
         <Route path="/fighterselect" element={<FighterSelect />} />
         <Route path="/arena" element={<Arena />} />

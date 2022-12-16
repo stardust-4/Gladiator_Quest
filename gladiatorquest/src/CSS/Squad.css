@@ -19,14 +19,6 @@ body {
   margin-right: 45px;
 }
 
-.opfightercardwrapper {
-  position: fixed;
-  display: grid;
-  margin-left: 900px;
-  margin-top: 900px;
-  width: 50%;
-}
-
 .wrapper {
   width: 90vw;
   height: 90vh;

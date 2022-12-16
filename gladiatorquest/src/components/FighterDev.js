@@ -11,7 +11,9 @@ const FighterDev = ({ schoolinfo }) => {
   const [fighterList, setFighterList] = useState([])
 
   const getFighters = async () => {
-    const res = await axios.get(`${BASE_URL}fighter/user/${thisSchoolId}`)
+    // const res = await axios.get(`${BASE_URL}fighter/user/${thisSchoolId}`)
+    const res = await axios.get(`${BASE_URL}fighter/`)
+
     setFighterList(res.data)
     console.log(res.data)
   }

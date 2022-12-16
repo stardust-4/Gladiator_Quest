@@ -1,9 +1,7 @@
-import hop from '../assets/hop.png'
-
-const ArenaFighterCard = () => {
+const Thr = () => {
   const homeBorder = {
     borderWidth: '4px',
-    backgroundColor: 'blue',
+    backgroundColor: 'gold',
     borderColor: 'black',
     borderStyle: 'solid',
     width: '225px',
@@ -14,28 +12,31 @@ const ArenaFighterCard = () => {
     height: '50px',
     marginTop: '10px',
     display: 'grid',
+    zIndex: '6',
     marginLeft: 'auto',
     marginRight: 'auto'
   }
   const health = {
     height: '30px',
     width: '80%',
-    backgroundColor: 'red',
+    backgroundColor: 'blue',
     margin: 'auto'
   }
-
   return (
     <div style={homeBorder}>
-      <p>Thoros</p>
-      <img style={image} alt="mini fighter head" src={hop}></img>
-      <p>Retiarius</p>
+      <p>Crixus</p>
+      <img
+        style={image}
+        src="https://ucarecdn.com/4ef9fd96-525b-4b7b-b6d2-cb26ea59ac98/"
+      ></img>
+      <p>Thraex</p>
       <div style={health}>health</div>
-      <p>Level: 90 </p>
-      <p>Upgrade $800 </p>
-      <p>Power Move: Flurry </p>
-      <p>Wins 20 </p>
-      <p>Losses 3 </p>
+      <p>Level: 53 </p>
+      <p>Upgrade $200 </p>
+      <p>Power Move: Achiles Slice </p>
+      <p>Wins 5 </p>
+      <p>Losses 0 </p>
     </div>
   )
 }
-export default ArenaFighterCard
+export default Thr

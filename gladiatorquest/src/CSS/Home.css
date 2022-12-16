@@ -50,3 +50,9 @@ text-align: center;
   margin-right: auto;
   width: 50%;
 }
+.poopie {
+  font-size: 70px;
+  color: red;
+  text-shadow: 2px 0 yellow, -2px 0 yellow, 0 2px yellow, 0 -2px yellow,
+  1px 1px yellow, -1px -1px yellow, 1px -1px yellow, -1px 1px yellow;
+}
