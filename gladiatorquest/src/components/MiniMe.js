@@ -22,12 +22,21 @@ const MiniMe = (props) => {
   }
 
   return (
+    // <div style={homeBorder}>
+    //   <img style={img} src={props.fighter.image} alt="mini fighter head"></img>
+    //   <h4 style={h4}>{props.fighter.name}</h4>
+    //   <p style={h4}>
+    //     {props.fighter.type} lvl {props.fighter.rating}
+    //   </p>
+    // </div>
     <div style={homeBorder}>
-      <img style={img} src={props.fighter.image} alt="mini fighter head"></img>
-      <h4 style={h4}>{props.fighter.name}</h4>
-      <p style={h4}>
-        {props.fighter.type} lvl {props.fighter.rating}
-      </p>
+      <img
+        style={img}
+        src="https://ucarecdn.com/d547e487-95fa-48c5-ad17-a0739c352bef/"
+        alt="mini fighter head"
+      ></img>
+      <h4 style={h4}>Crixsus</h4>
+      <p style={h4}>Retiarius</p>
     </div>
   )
 }

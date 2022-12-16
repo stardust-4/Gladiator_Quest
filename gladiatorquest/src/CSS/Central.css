@@ -18,7 +18,12 @@ body {
   margin-left: 45px;
   margin-right: 45px;
 }
+.minifightercardwrapper {
 
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
 .opfightercardwrapper {
   position: fixed;
   display: grid;
