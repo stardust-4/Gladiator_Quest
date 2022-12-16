@@ -27,6 +27,8 @@ const PickSchool = () => {
     await axios.put(`${BASE_URL}school/${selection}`, {
       userid: currentuser
     })
+    localStorage.setItem('userschool', selection)
+
     navigate('/central')
   }
 
