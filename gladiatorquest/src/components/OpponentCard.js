@@ -1,4 +1,4 @@
-const FighterCard = () => {
+const FighterCard = (props) => {
   const homeBorder = {
     borderWidth: '4px',
     backgroundColor: 'red',
@@ -20,8 +20,10 @@ const FighterCard = () => {
     height: '30px',
     width: '80%',
     backgroundColor: 'green',
-    margin: 'auto'
+    margin: 'auto',
+    fontSize: '20px'
   }
+
   return (
     <div style={homeBorder}>
       <p>Samson</p>
@@ -30,7 +32,7 @@ const FighterCard = () => {
         src="https://ucarecdn.com/d547e487-95fa-48c5-ad17-a0739c352bef/"
       ></img>
       <p>Retiarius</p>
-      <div style={health}>health</div>
+      <div style={health}>health is {props.opponentHealth}</div>
       <p>Level: 40 </p>
       <p>Upgrade $500 </p>
       <p>Power Move: Net Trip </p>

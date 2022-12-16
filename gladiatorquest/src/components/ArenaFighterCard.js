@@ -1,6 +1,6 @@
 import hop from '../assets/hop.png'
 
-const ArenaFighterCard = () => {
+const ArenaFighterCard = (props) => {
   const homeBorder = {
     borderWidth: '4px',
     backgroundColor: 'blue',
@@ -21,15 +21,16 @@ const ArenaFighterCard = () => {
     height: '30px',
     width: '80%',
     backgroundColor: 'red',
-    margin: 'auto'
+    margin: 'auto',
+    fontSize: '20px'
   }
 
   return (
     <div style={homeBorder}>
       <p>Thoros</p>
       <img style={image} alt="mini fighter head" src={hop}></img>
-      <p>Retiarius</p>
-      <div style={health}>health</div>
+      <p>Hoplomachus</p>
+      <div style={health}>health {props.goodguyHealth}</div>
       <p>Level: 90 </p>
       <p>Upgrade $800 </p>
       <p>Power Move: Flurry </p>

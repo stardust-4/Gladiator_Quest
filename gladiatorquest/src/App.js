@@ -8,9 +8,8 @@ import Squad from './components/Squad'
 import Transfers from './components/Transfers'
 import FighterSelect from './components/FighterSelect'
 import Arena from './components/Arena'
-// import { BASE_URL } from './globals'
-// import axios from 'axios'
-// import { useState } from 'react'
+import Win from './components/Win'
+import Loss from './components/Loss'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { BASE_URL } from './globals'
@@ -49,6 +48,8 @@ function App() {
         <Route path="/transfers" element={<Transfers />} />
         <Route path="/fighterselect" element={<FighterSelect />} />
         <Route path="/arena" element={<Arena />} />
+        <Route path="/win" element={<Win />} />
+        <Route path="/loss" element={<Loss />} />
       </Routes>
     </div>
   )
