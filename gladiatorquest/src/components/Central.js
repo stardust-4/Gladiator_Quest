@@ -10,27 +10,26 @@ import { BASE_URL } from '../globals'
 import Cheat from './Cheat'
 
 const Central = (props) => {
-  // let currentuser = localStorage.getItem('userid')
-  // let schoolid = localStorage.getItem('userschool')
-  // const [schoolinfo, setSchoolinfo] = useState(null)
+  let currentuser = localStorage.getItem('userid')
+  let currentuserid = parseInt(currentuser)
 
-  // const getUserSchool = async () => {
-  //   setSchoolinfo(
-  //     await axios.get(`${BASE_URL}school/myschool/${currentuser}`, {
-  //       userid: currentuser
-  //     })
-  //   )
-  // }
+  let schoolid = localStorage.getItem('userschool')
+  const [schoolinfo, setSchoolinfo] = useState(null)
 
-  // useEffect(() => {
-  //   getUserSchool()
-  //   // eslint-disable-next-line
-  // }, [])
+  const getUserSchool = async () => {
+    setSchoolinfo(
+      await axios.get(`${BASE_URL}school/myschool/${currentuser}`, {
+        userid: currentuser
+      })
+    )
+  }
 
-  // console.log(currentuser)
-  // console.log(schoolinfo.data)
-  // console.log(props.currentuser)
-  console.log(props.myschool)
+  useEffect(() => {
+    getUserSchool()
+    // eslint-disable-next-line
+  }, [])
+
+  console.log(currentuserid)
 
   return (
     <>
