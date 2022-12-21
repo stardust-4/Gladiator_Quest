@@ -51,6 +51,10 @@ function App() {
     const res = await axios.get(`${BASE_URL}user/get/${currentuser}`)
     setMyuser(res.data[0])
   }
+  // const getChampion = async () => {
+  //   const res = await axios.get(`${BASE_URL}fighter/user/${schoolid}`)
+  //   setMyfighters(res.data)
+  // }
 
   useEffect(() => {
     getAllFighters()

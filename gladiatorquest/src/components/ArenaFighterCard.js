@@ -1,6 +1,6 @@
-import hop from '../assets/hop.png'
+import '../CSS/SchoolCard.css'
 
-const ArenaFighterCard = (props) => {
+const ArenaFighterCard = ({ fighter }) => {
   const homeBorder = {
     borderWidth: '4px',
     backgroundColor: 'blue',
@@ -24,18 +24,18 @@ const ArenaFighterCard = (props) => {
     margin: 'auto',
     fontSize: '20px'
   }
-
+  // console.log(fighter)
   return (
-    <div style={homeBorder}>
-      <p>Thoros</p>
-      <img style={image} alt="mini fighter head" src={hop}></img>
-      <p>Hoplomachus</p>
-      <div style={health}>health {props.goodguyHealth}</div>
-      <p>Level: 90 </p>
-      <p>Upgrade $800 </p>
-      <p>Power Move: Flurry </p>
-      <p>Wins 20 </p>
-      <p>Losses 3 </p>
+    <div className={fighter.id} id="card" tabIndex="0">
+      <p>{fighter.name}</p>
+      <img style={image} alt="mini fighter head" src={fighter.image}></img>
+      <p>{fighter.type}</p>
+      <div style={health}>{fighter.healthpoints}</div>
+      <p>{fighter.level}</p>
+      <p>Upgrade cost {fighter.upgradecost}</p>
+      <p>Power Move: {fighter.powermove}</p>
+      <p>wins {fighter.wins}</p>
+      <p>losses {fighter.losses}</p>
     </div>
   )
 }
