@@ -77,11 +77,27 @@ const UpdateFighter = async (req, res) => {
   }
 }
 
+const GetFighterById = async (req, res) => {
+  try {
+    const champion = await Fighter.findAll({
+      where: {
+        id: `${req.params.id}`
+      },
+      raw: true,
+      nest: true
+    })
+
+    res.send(champion)
+  } catch (error) {
+    res.status(500).send({ status: 'Error', msg: 'get error' })
+  }
+}
 module.exports = {
   GetFighters,
   CreateFighter,
   GetTransferFighters,
   GetOpponentFighters,
   GetUserFighters,
-  UpdateFighter
+  UpdateFighter,
+  GetFighterById
 }
