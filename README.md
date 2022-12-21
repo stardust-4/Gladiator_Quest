@@ -20,6 +20,8 @@
 
 ### **_Description_**
 
+### to run you must do npm i on both GLADIATOR_QUEST and gladiatorquest
+
 #### Inspired by fifa career mode and pokemon Go. This is a game where warriors from different styles can face off against eachother. Win and you gain money, lose and you have to pay medical bills.
 
 ### **_Technologies_**

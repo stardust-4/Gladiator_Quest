@@ -16,10 +16,11 @@ import { BASE_URL } from './globals'
 function App() {
   let currentuser = localStorage.getItem('userid')
   let schoolid = localStorage.getItem('userschool')
+  let championid = localStorage.getItem('champion')
 
   const [myschool, setMySchool] = useState([])
   const [myschoolStartDate, setMySchoolStartDate] = useState([])
-
+  const [champion, setChampion] = useState([])
   const [myfighters, setMyfighters] = useState([])
   const [allfighters, setAllfighters] = useState([])
   const [oppfighters, setOppfighters] = useState([])
@@ -51,10 +52,10 @@ function App() {
     const res = await axios.get(`${BASE_URL}user/get/${currentuser}`)
     setMyuser(res.data[0])
   }
-  // const getChampion = async () => {
-  //   const res = await axios.get(`${BASE_URL}fighter/user/${schoolid}`)
-  //   setMyfighters(res.data)
-  // }
+  const getChampion = async () => {
+    const res = await axios.get(`${BASE_URL}fighter/champion/${championid}`)
+    setChampion(res.data)
+  }
 
   useEffect(() => {
     getAllFighters()
@@ -63,6 +64,7 @@ function App() {
     getOppFighters()
     getTransferFighters()
     getuserdata()
+    getChampion()
   }, [])
   // console.log(myschool)
   // console.log(myfighters)
@@ -70,6 +72,7 @@ function App() {
   // console.log(oppfighters)
   // console.log(transferfighters)
   // console.log(myuser)
+  // console.log(champion)
 
   const appBorder = {
     borderWidth: '4px',

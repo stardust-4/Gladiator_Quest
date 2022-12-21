@@ -35,7 +35,7 @@ const Squad = ({ myschool, myfighters }) => {
       <div style={cards}>
         {myfighters.map((fighter) => (
           <div onClick={select}>
-            <ArenaFighterCard key={fighter.id} fighter={fighter} />
+            <ArenaFighterCard key={fighter.name} fighter={fighter} />
           </div>
         ))}
       </div>
