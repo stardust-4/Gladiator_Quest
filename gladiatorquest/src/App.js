@@ -20,6 +20,8 @@ function App() {
   const [myschool, setMySchool] = useState(null)
   const [myfighters, setMyfighters] = useState([])
   const [allfighters, setAllfighters] = useState([])
+  const [oppfighters, setOppfighters] = useState([])
+  const [transferfighters, setTransferfighters] = useState([])
   const [myuser, setMyuser] = useState(null)
 
   const getMyFighters = async () => {
@@ -29,6 +31,14 @@ function App() {
   const getAllFighters = async () => {
     const res = await axios.get(`${BASE_URL}fighter/`)
     setAllfighters(res.data)
+  }
+  const getOppFighters = async () => {
+    const res = await axios.get(`${BASE_URL}fighter/opponents`)
+    setOppfighters(res.data)
+  }
+  const getTransferFighters = async () => {
+    const res = await axios.get(`${BASE_URL}fighter/transfers`)
+    setTransferfighters(res.data)
   }
   const getmyschool = async () => {
     const res = await axios.get(`${BASE_URL}school/myschool/${currentuser}`)
@@ -43,12 +53,15 @@ function App() {
     getAllFighters()
     getmyschool()
     getMyFighters()
+    getOppFighters()
+    getTransferFighters()
     getuserdata()
-    //   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   console.log(myschool)
   console.log(myfighters)
   console.log(allfighters)
+  console.log(oppfighters)
+  console.log(transferfighters)
   console.log(myuser)
 
   const appBorder = {
