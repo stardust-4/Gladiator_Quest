@@ -79,14 +79,57 @@ function App() {
         <Route path="/pickschool" element={<PickSchool />} />
         <Route
           path="/central"
-          element={<Central myschool={myschool} myfighters={myfighters} />}
+          element={
+            <Central
+              myuser={myuser}
+              myschool={myschool}
+              myfighters={myfighters}
+            />
+          }
         />
-        <Route path="/squad" element={<Squad />} />
-        <Route path="/transfers" element={<Transfers />} />
-        <Route path="/fighterselect" element={<FighterSelect />} />
-        <Route path="/arena" element={<Arena />} />
-        <Route path="/win" element={<Win />} />
-        <Route path="/loss" element={<Loss />} />
+        <Route
+          path="/squad"
+          element={<Squad myschool={myschool} myfighters={myfighters} />}
+        />
+        <Route
+          path="/transfers"
+          element={
+            <Transfers
+              myschool={myschool}
+              myfighters={myfighters}
+              transferfighters={transferfighters}
+            />
+          }
+        />
+        <Route
+          path="/fighterselect"
+          element={
+            <FighterSelect
+              myschool={myschool}
+              myfighters={myfighters}
+              oppfighters={oppfighters}
+            />
+          }
+        />
+        <Route
+          path="/arena"
+          element={
+            <Arena
+              myuser={myuser}
+              myschool={myschool}
+              myfighters={myfighters}
+              oppfighters={oppfighters}
+            />
+          }
+        />
+        <Route
+          path="/win"
+          element={<Win myuser={myuser} myschool={myschool} />}
+        />
+        <Route
+          path="/loss"
+          element={<Loss myuser={myuser} myschool={myschool} />}
+        />
       </Routes>
     </div>
   )
