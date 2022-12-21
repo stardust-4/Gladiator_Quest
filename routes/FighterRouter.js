@@ -5,6 +5,7 @@ Router.get('/', controller.GetFighters)
 Router.get('/transfers', controller.GetTransferFighters)
 Router.get('/opponents', controller.GetOpponentFighters)
 Router.get('/user/:userSchoolid', controller.GetUserFighters)
+Router.get('/champion/:id', controller.GetFighterById)
 Router.post('/create', controller.CreateFighter)
 Router.put('/:fighterid', controller.UpdateFighter)
 
