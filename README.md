@@ -38,6 +38,8 @@
 
 ### **_Getting Started_**
 
+##### Must create schools and fighters in backend using insomnia
+
 ##### Create an account and sign in
 
 ##### Swipe through schools to pick where you want your journey as a manager to start off. Pick a rich school for a fun game or a poor school for more of a challenge.
