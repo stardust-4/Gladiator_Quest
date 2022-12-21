@@ -66,25 +66,53 @@ const Arena = ({ myschool, champion }) => {
   // }
   const attack = () => {
     if (champion.type === 'Thraex') {
-      setgoodguyAttack(5)
-      setopponentAttack(6)
+      if (champion.rating > 60) {
+        setgoodguyAttack(5)
+        setopponentAttack(6)
+      } else if (champion.rating < 30) {
+        setgoodguyAttack(3)
+        setopponentAttack(6)
+      } else {
+        setgoodguyAttack(4)
+        setopponentAttack(6)
+      }
     } else if (champion.type === 'Hoplite') {
-      setgoodguyAttack(6)
-      setopponentAttack(5)
+      if (champion.rating > 60) {
+        setgoodguyAttack(5)
+        setopponentAttack(6)
+      } else if (champion.rating < 30) {
+        setgoodguyAttack(3)
+        setopponentAttack(6)
+      } else {
+        setgoodguyAttack(4)
+        setopponentAttack(6)
+      }
     } else if (champion.type === 'Retiarius') {
-      setgoodguyAttack(5)
-      setopponentAttack(5)
+      if (champion.rating > 60) {
+        setgoodguyAttack(5)
+        setopponentAttack(6)
+      } else if (champion.rating < 30) {
+        setgoodguyAttack(3)
+        setopponentAttack(6)
+      } else {
+        setgoodguyAttack(4)
+        setopponentAttack(6)
+      }
     }
     setopponentHealth(opponentHealth - goodguyAttack)
     setgoodguyHealth((champion.healthpoints -= opponentAttack)) //uncomment for non ai
     // console.log(opponentHealth)
     if (opponentHealth < 1 && goodguyHealth > 0) {
       myschool.wealth += 200
+      myschool.wins += 1
+
       navigate('/win')
       // setgoodguyHealth(100)
       // setopponentHealth(100)
     } else if (goodguyHealth < 1 && opponentHealth > 0) {
       myschool.wealth -= 200
+      myschool.losses += 1
+
       navigate('/loss')
       // setgoodguyHealth(100)
       // setopponentHealth(100)
