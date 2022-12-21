@@ -1,17 +1,17 @@
 import '../CSS/YourSchool.css'
+import { useEffect, useState } from 'react'
 
 const YourSchool = ({ myschool }) => {
-  console.log(myschool)
   return (
     <div className="yourschoolcard">
-      <div>{myschool[0].name}</div>
+      <div>{myschool.name}</div>
       <img
         className="yourschoolimage"
-        src={myschool[0].image}
+        src={myschool.image}
         alt="schoolimage"
       ></img>
-      <div>wealth $ {myschool[0].wealth}</div>
-      <div>{myschool[0].description}</div>
+      <div>wealth $ {myschool.wealth}</div>
+      <div>{myschool.description}</div>
     </div>
   )
 }
