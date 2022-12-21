@@ -17,41 +17,39 @@ function App() {
   let currentuser = localStorage.getItem('userid')
   let schoolid = localStorage.getItem('userschool')
 
-  // const [schools, setSchools] = useState([])
-  const [fighterList, setFighterList] = useState([])
   const [myschool, setMySchool] = useState(null)
   const [myfighters, setMyfighters] = useState([])
-
-  const getFighters = async () => {
-    const res = await axios.get(`${BASE_URL}fighter/`)
-    setFighterList(res.data)
-    console.log(fighterList)
-  }
+  const [allfighters, setAllfighters] = useState([])
+  const [myuser, setMyuser] = useState(null)
 
   const getMyFighters = async () => {
-    const res = await axios.get(`${BASE_URL}fighter/user/${myschool}`)
+    const res = await axios.get(`${BASE_URL}fighter/user/${schoolid}`)
     setMyfighters(res.data)
-    console.log(myfighters)
   }
-
+  const getAllFighters = async () => {
+    const res = await axios.get(`${BASE_URL}fighter/`)
+    setAllfighters(res.data)
+  }
   const getmyschool = async () => {
-    const res = await axios.get(`${BASE_URL}school/myschool/${currentuser}`, {
-      userid: currentuser
-    })
+    const res = await axios.get(`${BASE_URL}school/myschool/${currentuser}`)
     setMySchool(res.data)
   }
-
-  // const getSchools = async () => {
-  //     const res = await axios.get(`${BASE_URL}/api/school`)
-  //     setSchools(res.data)
-  //   }
+  const getuserdata = async () => {
+    const res = await axios.get(`${BASE_URL}user/get/${currentuser}`)
+    setMyuser(res.data)
+  }
 
   useEffect(() => {
-    getFighters()
+    getAllFighters()
     getmyschool()
     getMyFighters()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    getuserdata()
+    //   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+  console.log(myschool)
+  console.log(myfighters)
+  console.log(allfighters)
+  console.log(myuser)
 
   const appBorder = {
     borderWidth: '4px',
@@ -59,9 +57,6 @@ function App() {
     borderColor: 'blue',
     borderStyle: 'solid'
   }
-  console.log(myschool)
-  // console.log(myfighters)
-  // console.log(myfighters)
 
   return (
     <div className="App" style={appBorder}>
@@ -71,30 +66,12 @@ function App() {
         <Route path="/pickschool" element={<PickSchool />} />
         <Route
           path="/central"
-          element={
-            <Central
-              myschool={myschool}
-              currentuser={currentuser}
-              schoolid={schoolid}
-            />
-          }
+          element={<Central myschool={myschool} myfighters={myfighters} />}
         />
-        <Route
-          path="/squad"
-          element={
-            <Squad
-              fighterList={fighterList}
-              currentuser={currentuser}
-              schoolid={schoolid}
-            />
-          }
-        />
+        <Route path="/squad" element={<Squad />} />
         <Route path="/transfers" element={<Transfers />} />
         <Route path="/fighterselect" element={<FighterSelect />} />
-        <Route
-          path="/arena"
-          element={<Arena currentuser={currentuser} schoolid={schoolid} />}
-        />
+        <Route path="/arena" element={<Arena />} />
         <Route path="/win" element={<Win />} />
         <Route path="/loss" element={<Loss />} />
       </Routes>
