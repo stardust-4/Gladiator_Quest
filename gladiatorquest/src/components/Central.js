@@ -17,15 +17,12 @@ const Central = (props) => {
         <div className="element1 grid-box">
           <Link to={'/arena'}>Advance to Arena!</Link>
         </div>
-        <div className="element2 grid-box">
-          {' '}
-          <Cheat />
-        </div>
+        <div className="element2 grid-box">{/* <Cheat /> */}</div>
         <div className="element3 grid-box">
           <YourSchool myschool={props.myschool} />
         </div>
         <div className="element4 grid-box">
-          {/* <FighterDev schoolinfo={schoolinfo} /> */}
+          <FighterDev myschool={props.myschool} myfighters={props.myfighters} />
         </div>
         <div className="element6 grid-box">
           School Stats

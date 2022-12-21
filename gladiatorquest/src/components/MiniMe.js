@@ -1,4 +1,6 @@
-const MiniMe = (props) => {
+import FighterCard from './OpponentCard'
+
+const MiniMe = ({ myschool, myfighters, fighter }) => {
   const homeBorder = {
     borderWidth: '4px',
     backgroundColor: '#941b0c',
@@ -20,23 +22,15 @@ const MiniMe = (props) => {
     margin: '0px',
     fontSize: '30%'
   }
+  // console.log(fighter)
 
   return (
-    // <div style={homeBorder}>
-    //   <img style={img} src={props.fighter.image} alt="mini fighter head"></img>
-    //   <h4 style={h4}>{props.fighter.name}</h4>
-    //   <p style={h4}>
-    //     {props.fighter.type} lvl {props.fighter.rating}
-    //   </p>
-    // </div>
     <div style={homeBorder}>
-      <img
-        style={img}
-        src="https://ucarecdn.com/d547e487-95fa-48c5-ad17-a0739c352bef/"
-        alt="mini fighter head"
-      ></img>
-      <h4 style={h4}>Crixsus</h4>
-      <p style={h4}>Retiarius</p>
+      <img style={img} src={fighter.image} alt="mini fighter head"></img>
+      <h4 style={h4}>{fighter.name}</h4>
+      <p style={h4}>
+        {fighter.type} {fighter.rating}
+      </p>
     </div>
   )
 }
