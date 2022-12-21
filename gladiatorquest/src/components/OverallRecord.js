@@ -1,17 +1,12 @@
-const OverallRecord = ({ schoolinfo }) => {
-  let thisSchoolData = schoolinfo
-  console.log(thisSchoolData)
+const OverallRecord = ({ myschool }) => {
   const stats = {
     fontSize: '50%'
   }
   return (
     <div style={stats}>
-      {/* {/* <p>{thisSchoolData.wins}</p> */}
-      {/* <p>{thisSchoolData.losses}</p> */}
-      {/* <p>{thisSchoolData.createdAt.split('T')[0]}</p> */}
-      <p>wins = 2</p>
-      <p>losses = 3</p>
-      <p>Established 12-15-2022</p>
+      <p>wins = {myschool[0].wins}</p>
+      <p>losses = {myschool[0].losses}</p>
+      <p>Established {myschool[0].createdAt.split('T')[0]}</p>
     </div>
   )
 }
