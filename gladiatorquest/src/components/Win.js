@@ -10,7 +10,7 @@ const Win = () => {
 
   return (
     <div>
-      <p>You Won!</p>
+      <p>You Won! Enjoy 200 in prizemoney</p>
       <button onClick={proceed}>continue</button>
     </div>
   )

@@ -27,10 +27,10 @@ const Arena = ({ myschool, champion }) => {
     marginLeft: '260px'
   }
   const opponent = {
-    display: 'inline-block',
-    width: '235px',
-    marginRight: '260px',
-    float: 'right',
+    // display: 'inline-block',
+    // width: '235px',
+    // marginRight: '460px',
+    // float: 'right',
     marginTop: '270px'
   }
   const squad = {
@@ -48,44 +48,48 @@ const Arena = ({ myschool, champion }) => {
     fontSize: '20px'
   }
   const [opponentHealth, setopponentHealth] = useState(100)
-  const [goodguyHealth, setgoodguyHealth] = useState(100)
-  const [goodguyAttack, setgoodguyAttack] = useState(5)
-  const [opponentAttack, setopponentAttack] = useState(8)
+  const [goodguyHealth, setgoodguyHealth] = useState(champion.healthpoints)
+  const [goodguyAttack, setgoodguyAttack] = useState([])
+  const [opponentAttack, setopponentAttack] = useState([])
 
-  // setInterval(() => {
-  //   setgoodguyHealth(goodguyHealth - 3)
-  //   console.log(goodguyHealth)
-  // }, 700)
-
-  const opponentattacking = () => {
-    console.log(goodguyHealth)
-    intervalCounter += 1
-    // if (intervalCounter === 60) {
-    //   clearInterval(interval)
-    // }
-    if (goodguyHealth < 1) {
-      // clearInterval(interval)
-      navigate('/loss')
-    } else if (goodguyHealth > 1) {
-      setgoodguyHealth(goodguyHealth - 8)
-    }
-  }
-
+  // const determinAttackStrength = () => {
+  //   if (champion.type === 'Thraex') {
+  //     setgoodguyAttack(5)
+  //     setopponentAttack(6)
+  //   } else if (champion.type === 'Hoplite') {
+  //     setgoodguyAttack(6)
+  //     setopponentAttack(5)
+  //   } else if (champion.type === 'Retiarius') {
+  //     setgoodguyAttack(5)
+  //     setopponentAttack(5)
+  //   }
+  // }
   const attack = () => {
+    if (champion.type === 'Thraex') {
+      setgoodguyAttack(5)
+      setopponentAttack(6)
+    } else if (champion.type === 'Hoplite') {
+      setgoodguyAttack(6)
+      setopponentAttack(5)
+    } else if (champion.type === 'Retiarius') {
+      setgoodguyAttack(5)
+      setopponentAttack(5)
+    }
     setopponentHealth(opponentHealth - goodguyAttack)
-    setgoodguyHealth(goodguyHealth - opponentAttack) //uncomment for non ai
-    console.log(opponentHealth)
+    setgoodguyHealth((champion.healthpoints -= opponentAttack)) //uncomment for non ai
+    // console.log(opponentHealth)
     if (opponentHealth < 1 && goodguyHealth > 0) {
+      myschool.wealth += 200
       navigate('/win')
       // setgoodguyHealth(100)
       // setopponentHealth(100)
     } else if (goodguyHealth < 1 && opponentHealth > 0) {
+      myschool.wealth -= 200
       navigate('/loss')
       // setgoodguyHealth(100)
       // setopponentHealth(100)
     }
   }
-  // console.log(champion)
 
   let intervalCounter = 0
   // let interval = setInterval(opponentattacking, 700)
@@ -103,6 +107,11 @@ const Arena = ({ myschool, champion }) => {
       <div style={fight} onClick={attack}>
         Click!
       </div>
+      {/* <form>
+        <button style={fight} onClick={start}>
+          Start/restart game
+        </button>
+      </form> */}
     </div>
   )
 }

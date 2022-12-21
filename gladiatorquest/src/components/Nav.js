@@ -11,9 +11,9 @@ const Nav = () => {
         <li>
           <Link to={'/squad'}>Squad </Link>
         </li>
-        <li>
+        {/*  transfers will be a future development. for now, seed teams  <li>
           <Link to={'/transfers'}>Transfers </Link>
-        </li>
+        </li> */}
         <li>
           <Link
             to={'/'}

@@ -10,7 +10,7 @@ const Loss = () => {
 
   return (
     <div>
-      <p>You lost</p>
+      <p>You lost and have to pay 200 in medical bills!</p>
       <button onClick={proceed}>continue</button>
     </div>
   )

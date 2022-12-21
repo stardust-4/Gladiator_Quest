@@ -1,4 +1,4 @@
-const FighterCard = (props) => {
+const OpponentCard = (props) => {
   const homeBorder = {
     borderWidth: '4px',
     backgroundColor: 'red',
@@ -41,4 +41,4 @@ const FighterCard = (props) => {
     </div>
   )
 }
-export default FighterCard
+export default OpponentCard

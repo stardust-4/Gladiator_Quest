@@ -1,11 +1,10 @@
 import MiniMe from './MiniMe'
-import { useEffect, useState } from 'react'
 import '../CSS/Central.css'
 
 const FighterDev = ({ myschool, myfighters }) => {
   const fightercardwrapper = {
-    height: '50px',
-    width: '50px'
+    minHeight: '50px',
+    minWidth: '50px'
   }
 
   return (
