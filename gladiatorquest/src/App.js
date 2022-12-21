@@ -17,12 +17,14 @@ function App() {
   let currentuser = localStorage.getItem('userid')
   let schoolid = localStorage.getItem('userschool')
 
-  const [myschool, setMySchool] = useState(null)
+  const [myschool, setMySchool] = useState([])
+  const [myschoolStartDate, setMySchoolStartDate] = useState([])
+
   const [myfighters, setMyfighters] = useState([])
   const [allfighters, setAllfighters] = useState([])
   const [oppfighters, setOppfighters] = useState([])
   const [transferfighters, setTransferfighters] = useState([])
-  const [myuser, setMyuser] = useState(null)
+  const [myuser, setMyuser] = useState([])
 
   const getMyFighters = async () => {
     const res = await axios.get(`${BASE_URL}fighter/user/${schoolid}`)
@@ -42,11 +44,12 @@ function App() {
   }
   const getmyschool = async () => {
     const res = await axios.get(`${BASE_URL}school/myschool/${currentuser}`)
-    setMySchool(res.data)
+    setMySchool(res.data[0])
+    setMySchoolStartDate(res.data[0].createdAt.split('T')[0])
   }
   const getuserdata = async () => {
     const res = await axios.get(`${BASE_URL}user/get/${currentuser}`)
-    setMyuser(res.data)
+    setMyuser(res.data[0])
   }
 
   useEffect(() => {
@@ -57,12 +60,12 @@ function App() {
     getTransferFighters()
     getuserdata()
   }, [])
-  console.log(myschool)
-  console.log(myfighters)
-  console.log(allfighters)
-  console.log(oppfighters)
-  console.log(transferfighters)
-  console.log(myuser)
+  // console.log(myschool)
+  // console.log(myfighters)
+  // console.log(allfighters)
+  // console.log(oppfighters)
+  // console.log(transferfighters)
+  // console.log(myuser)
 
   const appBorder = {
     borderWidth: '4px',
@@ -84,6 +87,7 @@ function App() {
               myuser={myuser}
               myschool={myschool}
               myfighters={myfighters}
+              myschoolStartDate={myschoolStartDate}
             />
           }
         />

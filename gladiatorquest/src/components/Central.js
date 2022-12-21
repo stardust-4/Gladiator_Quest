@@ -4,9 +4,6 @@ import FighterDev from './FighterDev'
 import OverallRecord from './OverallRecord'
 import '../CSS/Central.css'
 import YourSchool from './YourSchool'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-import { BASE_URL } from '../globals'
 import Cheat from './Cheat'
 /// OGGGG
 const Central = (props) => {
@@ -25,14 +22,17 @@ const Central = (props) => {
           <Cheat />
         </div>
         <div className="element3 grid-box">
-          {/* <YourSchool myschool={props.myschool} /> */}
+          <YourSchool myschool={props.myschool} />
         </div>
         <div className="element4 grid-box">
           {/* <FighterDev schoolinfo={schoolinfo} /> */}
         </div>
         <div className="element6 grid-box">
           School Stats
-          {/* <OverallRecord myschool={props.myschool} /> */}
+          <OverallRecord
+            myschool={props.myschool}
+            myschoolStartDate={props.myschoolStartDate}
+          />
         </div>
       </main>
     </>
