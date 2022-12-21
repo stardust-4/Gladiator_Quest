@@ -54,7 +54,7 @@ function App() {
   }
   const getChampion = async () => {
     const res = await axios.get(`${BASE_URL}fighter/champion/${championid}`)
-    setChampion(res.data)
+    setChampion(res.data[0])
   }
 
   useEffect(() => {
@@ -72,7 +72,7 @@ function App() {
   // console.log(oppfighters)
   // console.log(transferfighters)
   // console.log(myuser)
-  // console.log(champion)
+  console.log(champion)
 
   const appBorder = {
     borderWidth: '4px',
@@ -95,12 +95,19 @@ function App() {
               myschool={myschool}
               myfighters={myfighters}
               myschoolStartDate={myschoolStartDate}
+              champion={champion}
             />
           }
         />
         <Route
           path="/squad"
-          element={<Squad myschool={myschool} myfighters={myfighters} />}
+          element={
+            <Squad
+              myschool={myschool}
+              myfighters={myfighters}
+              champion={champion}
+            />
+          }
         />
         <Route
           path="/transfers"
@@ -130,6 +137,7 @@ function App() {
               myschool={myschool}
               myfighters={myfighters}
               oppfighters={oppfighters}
+              champion={champion}
             />
           }
         />

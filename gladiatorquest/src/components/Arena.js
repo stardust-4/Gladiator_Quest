@@ -1,12 +1,12 @@
 import backgrounds from '../assets/backgrounds'
-import ArenaFighterCard from './ArenaFighterCard'
+import ChampionCard from './ChampionCard'
 import ArenaSquad from './ArenaSquad'
 import OpponentCard from './OpponentCard'
 import '../CSS/Central.css'
 import { startTransition, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Arena = () => {
+const Arena = ({ myschool, champion }) => {
   let navigate = useNavigate()
 
   const homeBorder = {
@@ -85,6 +85,7 @@ const Arena = () => {
       // setopponentHealth(100)
     }
   }
+  // console.log(champion)
 
   let intervalCounter = 0
   // let interval = setInterval(opponentattacking, 700)
@@ -93,7 +94,7 @@ const Arena = () => {
     <div className="home" style={homeBorder}>
       <p>Arena, fight!</p>
       <div style={yourFighter}>
-        <ArenaFighterCard goodguyHealth={goodguyHealth} />
+        <ChampionCard goodguyHealth={goodguyHealth} champion={champion} />
       </div>
       <div className="opfightercardwrapper" style={opponent}>
         {<OpponentCard opponentHealth={opponentHealth} />}

@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../globals'
 import ArenaFighterCard from './ArenaFighterCard'
-const Squad = ({ myschool, myfighters }) => {
-  const [champion, setChampion] = useState(null)
+const Squad = ({ myschool, myfighters, champion }) => {
+  const [championid, setChampionid] = useState(null)
 
   const homeBorder = {
     borderWidth: '4px',
@@ -18,20 +18,23 @@ const Squad = ({ myschool, myfighters }) => {
   }
 
   const select = (e) => {
-    setChampion(e.target.className)
+    setChampionid(e.target.className)
   }
-  console.log('selected fighter id = ' + champion)
-
+  console.log('selected fighter id = ' + championid)
+  console.log(champion)
   const handleSubmit = (e) => {
     e.preventDefault()
-    localStorage.setItem('champion', champion)
+    localStorage.setItem('champion', championid)
   }
-
+  const champ = {
+    fontSize: '30px'
+  }
   return (
     <div style={homeBorder}>
       <>
         <Nav />
       </>
+      <div style={champ}>Current champion is {champion.name}</div>
       <div style={cards}>
         {myfighters.map((fighter) => (
           <div onClick={select}>
